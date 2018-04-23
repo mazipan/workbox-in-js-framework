@@ -7,14 +7,19 @@
 
 ## About this repo
 
-This repo will demontrate you using workbox in various real world example with popular JS framework, also will add with more sample with different test case.
+This repo will demonstrate you how to using workbox in various real world example with popular JS framework, also will add with more sample with different test case.
 All different case will seperate in different branch.
+We also try to explain step by step clearly, so you can learn easier.
 
 ## Available Codes
 
 1. [Workbox in Vue.js](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs)
 1. [Workbox in Angular](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular)
 1. [Workbox in React](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react)
+
+## Workbox Modules
+
+All code will use workbox's [modules](https://developers.google.com/web/tools/workbox/modules/) like Workbox CLI, workbox-build or workbox-webpack-plugin.
 
 ## Contribution Guide
 
