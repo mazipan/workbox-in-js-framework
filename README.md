@@ -7,14 +7,27 @@ We expecting You will using official [webpack template](https://github.com/vuejs
 
 We will introduce you 3 different modules CLI, workbox-build and webpack-plugin. Why ? Because sometimes we need to lookup the different point of view and need to find different approach. Vue.js is very configurable in terms of build process, we can modify the process with ease.
 
-### Using Workbox Webpack Plugin
+### 👉 Using Workbox Webpack Plugin
+
+#### 🦄 with generateSW
+
+#### 🐍 with injectManifest
 
 
-### Using Workbox Build
+### 👉 Using Workbox Build
 
 
-### Using Workbox CLI
+#### 🦄 with generateSW
 
+#### 🐍 with injectManifest
+
+
+### 👉 Using Workbox CLI
+
+
+#### 🦄 with generateSW
+
+#### 🐍 with injectManifest
 
 
 ## See Others Codes
