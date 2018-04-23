@@ -18,6 +18,8 @@ We also try to explain step by step clearly, so you can learn easier.
 1. [Workbox in Angular](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular)
 1. [Workbox in React](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react)
 
+All sample will using the latest version from workbox, current is v3.1.0.
+
 ## Workbox Modules
 
 All code will use workbox's [modules](https://developers.google.com/web/tools/workbox/modules/) like Workbox CLI, workbox-build or workbox-webpack-plugin.
