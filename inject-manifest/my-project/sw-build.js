@@ -1,7 +1,9 @@
-const { generateSW } = require('workbox-build');
+const { injectManifest } = require('workbox-build');
 
+const swSrc = './sw-template.js';
 const swDest = 'dist/sw.js';
-generateSW({
+injectManifest({
+  swSrc,
   swDest,
   globDirectory: 'dist'
 }).then(({count, size}) => {

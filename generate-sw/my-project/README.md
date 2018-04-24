@@ -25,3 +25,47 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Workbox Generate Steps:
+
+We decide using `generateSW` when we want simple setup for our service worker and not using any other API for PWA, here the steps:
+
+1. First we can create new Angular Project with Angular-CLI with command: `ng new my-project`
+
+2. Install dependencies (if not automated) with `npm i` or `yarn install`
+
+3. Add dependency `workbox-build` with command:
+   npm: `npm i --save-dev workbox-build`
+   yarn: `yarn add workbox-build -D`
+
+4. Create new file for generating our service worker, let's name it `sw-build.js`, we put in root folder.
+
+5. Add simple setup in file `sw-build.js` with script like this:
+
+  ```js
+  const { generateSW } = require('workbox-build');
+
+  const swDest = 'dist/sw.js';
+  generateSW({
+    swDest,
+    globDirectory: 'dist'
+  }).then(({count, size}) => {
+    console.log(`Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`);
+  });
+  ```
+
+6. Try running build for first time with command: `npm run build`
+  It will create new folder `./dist` as our output result.
+
+7. Try running `workbox-build` script with `node ./sw-build.js`.
+  It should create file `sw.js` in `./dist` folder.
+
+8. Automate in build process. Just modify `build` script in `package.json`
+
+  ```js
+  "scripts": {
+    "build": "ng build --prod && node ./sw-build.js"
+  }
+  ```
+
+9. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
