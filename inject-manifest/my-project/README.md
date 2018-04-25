@@ -103,3 +103,26 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 11. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
 
+
+## Using Workbox-CLI
+
+1. Install `Workbox CLI` with command `npm install workbox-cli --global` or `yarn global add workbox-cli`
+
+2. Create config file, `workbox-config.js` in root folder
+
+3. Add this script in this file:
+
+  ```js
+  module.exports =  {
+    swSrc: './sw-template.js',
+    swDest: 'dist/sw.js',
+    globDirectory: 'dist'
+  }
+  ```
+
+4. Run script with command: `workbox injectManifest ./workbox-config.js`
+
+5. Automate with adding script in your build process in `package.json`
+
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+

@@ -69,3 +69,25 @@ We decide using `generateSW` when we want simple setup for our service worker an
   ```
 
 9. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+
+
+## Using Workbox-CLI
+
+1. Install `Workbox CLI` with command `npm install workbox-cli --global` or `yarn global add workbox-cli`
+
+2. Create config file, `workbox-config.js` in root folder
+
+3. Add this script in this file:
+
+  ```js
+  module.exports =  {
+    swDest: 'dist/sw.js',
+    globDirectory: 'dist'
+  }
+  ```
+
+4. Run script with command: `workbox generateSW ./workbox-config.js`
+
+5. Automate with adding script in your build process in `package.json`
+
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
