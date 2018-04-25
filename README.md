@@ -15,7 +15,7 @@ This section we demonstrate how to use Workbox in your Angular project.
 3. Try running build for first time with command: `npm run build`
   It will create new folder `./dist` as our output result.
 
-### 👉 Using Workbox Build
+## 👉 Using Workbox Build
 
 This part we will use `workbox-build` modules. Here step by step:
 
@@ -23,7 +23,7 @@ This part we will use `workbox-build` modules. Here step by step:
    npm: `npm i --save-dev workbox-build`
    yarn: `yarn add workbox-build -D`
 
-#### 🦄 with generateSW
+### 🦄 Workbox Build with generateSW
 
 We decide using `generateSW` when we want simple setup for our service worker and not using any other API for PWA, here the steps:
 
@@ -60,7 +60,7 @@ We decide using `generateSW` when we want simple setup for our service worker an
 6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
 
 
-#### 🐍 with injectManifest
+### 🐍 Workbox Build with injectManifest
 
 We using `injectManifest` because we will create more advance script in our service-worker. The steps is almost same, but we need to prepare our service worker first that will used by workbox as template to inject precache files later. Here the step by step :
 
@@ -126,13 +126,13 @@ We using `injectManifest` because we will create more advance script in our serv
 8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
 
 
-### 👉 Using Workbox CLI
+## 👉 Using Workbox CLI
 
 This part we will use `Workbox CLI` modules. Here step by step:
 
 1. Install `Workbox CLI` with command `npm install workbox-cli --global` or `yarn global add workbox-cli`
 
-#### 🦄 with generateSW
+### 🦄 Workbox CLI with generateSW
 
 1. Create config file, `workbox-config.js` in root folder
 
@@ -151,7 +151,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
 
-#### 🐍 with injectManifest
+### 🐍 Workbox CLI with injectManifest
 
 1. Create config file, `workbox-config.js` in root folder
 
@@ -199,6 +199,7 @@ function registerServiceWorker() {
 
 ## See Others Codes
 
+1. [Workbox Introduction](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-intro)
 1. [Workbox in Vue.js](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs)
 1. [Workbox in Angular](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular)
 1. [Workbox in React](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react)
