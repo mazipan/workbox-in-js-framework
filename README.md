@@ -84,12 +84,7 @@ This part we will use `workbox-webpack-plugin` modules. Here step by step:
   );
 
   workbox.routing.registerRoute(
-    /\.(?:js|css)$/,
-    workbox.strategies.staleWhileRevalidate(),
-  );
-
-  workbox.routing.registerRoute(
-    /\.(?:png|gif|jpg|jpeg|svg)$/,
+    /\.(?:png|gif|jpg|jpeg|svg|js|css|html)$/,
     workbox.strategies.cacheFirst({
       cacheName: 'images',
       plugins: [
