@@ -3,31 +3,39 @@
 
 ## Workbox In Vue.js
 
-We expecting You will using official [webpack template](https://github.com/vuejs-templates/webpack) from [vuejs-templates](https://github.com/vuejs-templates), because now this template is not supported PWA we can insert Workbox to generate our service worker into build proccess.
+We will using Vue-CLI v2.9.2 for generating Vue skeleton. We expecting You will using official [webpack template](https://github.com/vuejs-templates/webpack) from [vuejs-templates](https://github.com/vuejs-templates), because now this template is not supported PWA we can insert Workbox to generate our service worker into build proccess.
 
 We will introduce you 3 different modules CLI, workbox-build and webpack-plugin. Why ? Because sometimes we need to lookup the different point of view and need to find different approach. Vue.js is very configurable in terms of build process, we can modify the process with ease.
 
-### 👉 Using Workbox Webpack Plugin
+## Create Vue Project with Vue-CLI v2.9.2
 
-#### 🦄 with generateSW
+1. Create new project with command `vue init webpack my-project`
 
-#### 🐍 with injectManifest
+2. Install dependencies: `npm i`
 
+3. Run production for first time: `npm run build`
 
-### 👉 Using Workbox Build
+## 👉 Using Workbox Webpack Plugin
 
+### 🦄 with generateSW
 
-#### 🦄 with generateSW
-
-#### 🐍 with injectManifest
-
-
-### 👉 Using Workbox CLI
+### 🐍 with injectManifest
 
 
-#### 🦄 with generateSW
+## 👉 Using Workbox Build
 
-#### 🐍 with injectManifest
+
+### 🦄 with generateSW
+
+### 🐍 with injectManifest
+
+
+## 👉 Using Workbox CLI
+
+
+### 🦄 with generateSW
+
+### 🐍 with injectManifest
 
 
 ## See Others Codes
