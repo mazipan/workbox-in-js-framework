@@ -15,28 +15,56 @@ We will introduce you 3 different modules CLI, workbox-build and webpack-plugin.
 
 3. Run production for first time: `npm run build`
 
+------------------------------------------------------------
+
 ## 👉 Using Workbox Webpack Plugin
+
+This part we will use `workbox-webpack-plugin` modules. Here step by step:
+
+1. Add dependency `workbox-webpack-plugin` with command: `npm i --save-dev workbox-webpack-plugin` or `yarn add workbox-webpack-plugin -D`
 
 ### 🦄 with generateSW
 
+2. We will modify in webpack build process, open file `./build/webpack.prod.conf.js`
+
+3. Import `GenerateSW` with script
+
+  ```js
+  // ... other webpack plugin import
+  const { GenerateSW } = require('workbox-webpack-plugin')
+  ```
+
+4. Look into `plugins: []` configuration, we will add script in this section
+
+5.
+
 ### 🐍 with injectManifest
 
+------------------------------------------------------------
 
 ## 👉 Using Workbox Build
 
+This part we will use `workbox-build` modules. Here step by step:
+
+1. Add dependency `workbox-build` with command: `npm i --save-dev workbox-build` or `yarn add workbox-build -D`
 
 ### 🦄 with generateSW
 
 ### 🐍 with injectManifest
 
+------------------------------------------------------------
 
 ## 👉 Using Workbox CLI
 
+This part we will use `Workbox CLI` modules. Here step by step:
+
+1. Install `Workbox CLI` with command `npm install workbox-cli --global` or `yarn global add workbox-cli`
 
 ### 🦄 with generateSW
 
 ### 🐍 with injectManifest
 
+------------------------------------------------------------
 
 ## See Others Codes
 
