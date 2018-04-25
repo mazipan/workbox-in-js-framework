@@ -111,7 +111,91 @@ This part we will use `workbox-build` modules. Here step by step:
 
 ### 🦄 with generateSW
 
+1. Add new js file in `./build/workbox.build.js`
+
+2. Put this below script:
+
+  ```js
+  const { generateSW } = require('workbox-build');
+
+  const swDest = 'dist/sw.js';
+  generateSW({
+    swDest,
+    globDirectory: 'dist'
+  }).then(({count, size}) => {
+    console.log(`Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`);
+  });
+  ```
+
+3. Run with command `node build/workbox.build.js`
+
+4. Integrate in build process, just edit `package.json`
+
+  ```js
+  "scripts": {
+    "build": "node build/build.js && node build/workbox.build.js"
+  }
+  ```
+
+5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-build/generateSW/my-project
+
 ### 🐍 with injectManifest
+
+
+1. Add new js file in `./build/workbox.build.js`
+
+2. Put this below script:
+
+  ```js
+  const { injectManifest } = require('workbox-build');
+
+  const swSrc = './sw-template.js';
+  const swDest = 'dist/sw.js';
+  injectManifest({
+    swSrc,
+    swDest,
+    globDirectory: 'dist'
+  }).then(({count, size}) => {
+    console.log(`Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`);
+  });
+  ```
+
+3. Create `sw-template.js` file in root folder with script like this:
+
+  ```js
+  // This is required line
+  workbox.precaching.precacheAndRoute([]);
+
+  workbox.routing.registerRoute(
+    new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+    workbox.strategies.cacheFirst(),
+  );
+
+  workbox.routing.registerRoute(
+    /\.(?:png|gif|jpg|jpeg|svg|js|css|html)$/,
+    workbox.strategies.cacheFirst({
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    }),
+  );
+  ```
+
+4. Run with command `node build/workbox.build.js`
+
+5. Integrate in build process, just edit `package.json`
+
+  ```js
+  "scripts": {
+    "build": "node build/build.js && node build/workbox.build.js"
+  }
+  ```
+
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-build/injectManifest/my-project
 
 ------------------------------------------------------------
 
@@ -123,7 +207,80 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 ### 🦄 with generateSW
 
+1. Add new config file in `./config/workbox-config.js`
+
+2. Put this script:
+
+  ```js
+  module.exports =  {
+    swDest: 'dist/sw.js',
+    globDirectory: 'dist'
+  }
+  ```
+
+3. Run with command `workbox generateSW ./workbox-config.js`
+
+4. Integrate in build process, just edit `package.json`
+
+  ```js
+  "scripts": {
+    "build": "node build/build.js && workbox generateSW ./workbox-config.js"
+  }
+  ```
+
+5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-cli/generateSW/my-project
+
 ### 🐍 with injectManifest
+
+
+1. Add new config file in `./config/workbox-config.js`
+
+2. Put this script:
+
+  ```js
+  module.exports =  {
+    swSrc: './sw-template.js',
+    swDest: 'dist/sw.js',
+    globDirectory: 'dist'
+  }
+  ```
+
+3. Create `sw-template.js` file in root folder with script like this:
+
+  ```js
+  // This is required line
+  workbox.precaching.precacheAndRoute([]);
+
+  workbox.routing.registerRoute(
+    new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+    workbox.strategies.cacheFirst(),
+  );
+
+  workbox.routing.registerRoute(
+    /\.(?:png|gif|jpg|jpeg|svg|js|css|html)$/,
+    workbox.strategies.cacheFirst({
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    }),
+  );
+  ```
+
+4. Run with command `workbox injectManifest ./workbox-config.js`
+
+5. Integrate in build process, just edit `package.json`
+
+  ```js
+  "scripts": {
+    "build": "node build/build.js && workbox injectManifest ./workbox-config.js"
+  }
+  ```
+
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-cli/injectManifest/my-project
 
 ------------------------------------------------------------
 
