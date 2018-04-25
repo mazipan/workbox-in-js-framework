@@ -78,12 +78,7 @@ We using `injectManifest` because we will create more advance script in our serv
   );
 
   workbox.routing.registerRoute(
-    /\.(?:js|css)$/,
-    workbox.strategies.staleWhileRevalidate(),
-  );
-
-  workbox.routing.registerRoute(
-    /\.(?:png|gif|jpg|jpeg|svg)$/,
+    /\.(?:png|gif|jpg|jpeg|svg|js|css|html)$/,
     workbox.strategies.cacheFirst({
       cacheName: 'images',
       plugins: [
