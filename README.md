@@ -23,7 +23,7 @@ This part we will use `workbox-webpack-plugin` modules. Here step by step:
 
 1. Add dependency `workbox-webpack-plugin` with command: `npm i --save-dev workbox-webpack-plugin` or `yarn add workbox-webpack-plugin -D`
 
-### 🦄 with generateSW
+### 🦄 Workbox Webpack Plugin with generateSW
 
 1. We will modify in webpack build process, open file `./build/webpack.prod.conf.js`
 
@@ -49,7 +49,7 @@ This part we will use `workbox-webpack-plugin` modules. Here step by step:
 
 6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-webpack-plugin/generateSW/my-project
 
-### 🐍 with injectManifest
+### 🐍 Workbox Webpack Plugin with injectManifest
 
 1. We will modify in webpack build process, open file `./build/webpack.prod.conf.js`
 
@@ -109,7 +109,7 @@ This part we will use `workbox-build` modules. Here step by step:
 
 1. Add dependency `workbox-build` with command: `npm i --save-dev workbox-build` or `yarn add workbox-build -D`
 
-### 🦄 with generateSW
+### 🦄 Workbox Build with generateSW
 
 1. Add new js file in `./build/workbox.build.js`
 
@@ -139,7 +139,7 @@ This part we will use `workbox-build` modules. Here step by step:
 
 5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-build/generateSW/my-project
 
-### 🐍 with injectManifest
+### 🐍 Workbox Build with injectManifest
 
 
 1. Add new js file in `./build/workbox.build.js`
@@ -205,7 +205,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 1. Install `Workbox CLI` with command `npm install workbox-cli --global` or `yarn global add workbox-cli`
 
-### 🦄 with generateSW
+### 🦄 Workbox CLI with generateSW
 
 1. Add new config file in `./config/workbox-config.js`
 
@@ -230,8 +230,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-cli/generateSW/my-project
 
-### 🐍 with injectManifest
-
+### 🐍 Workbox CLI with injectManifest
 
 1. Add new config file in `./config/workbox-config.js`
 
