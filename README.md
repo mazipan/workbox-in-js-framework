@@ -25,20 +25,86 @@ This part we will use `workbox-webpack-plugin` modules. Here step by step:
 
 ### 🦄 with generateSW
 
-2. We will modify in webpack build process, open file `./build/webpack.prod.conf.js`
+1. We will modify in webpack build process, open file `./build/webpack.prod.conf.js`
 
-3. Import `GenerateSW` with script
+2. Import `GenerateSW` with script
 
   ```js
   // ... other webpack plugin import
   const { GenerateSW } = require('workbox-webpack-plugin')
   ```
 
-4. Look into `plugins: []` configuration, we will add script in this section
+3. Look into `plugins: []` configuration, we will add script in this section
 
-5.
+4. Add this script in very last of `plugins: []` configuration
+
+  ```js
+  new GenerateSW({
+    swDest: path.join(config.build.assetsRoot, '/sw.js'),
+    precacheManifestFilename: path.join(config.build.assetsSubDirectory, '/precache.[manifestHash].js')
+  })
+  ```
+
+5. Run build again `npm run build`
+
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-webpack-plugin/generateSW/my-project
 
 ### 🐍 with injectManifest
+
+1. We will modify in webpack build process, open file `./build/webpack.prod.conf.js`
+
+2. Import `InjectManifest` with script
+
+  ```js
+  // ... other webpack plugin import
+  const { InjectManifest } = require('workbox-webpack-plugin')
+  ```
+
+3. Look into `plugins: []` configuration, we will add script in this section
+
+4. Add this script in very last of `plugins: []` configuration
+
+  ```js
+  new InjectManifest({
+    swSrc: './sw-template.js',
+    swDest: path.join(config.build.assetsRoot, '/sw.js'),
+    precacheManifestFilename: path.join(config.build.assetsSubDirectory, '/precache.[manifestHash].js')
+  })
+  ```
+
+5. Create `sw-template.js` file in root folder with script like this:
+
+  ```js
+  // This is required line
+  workbox.precaching.precacheAndRoute([]);
+
+  workbox.routing.registerRoute(
+    new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+    workbox.strategies.cacheFirst(),
+  );
+
+  workbox.routing.registerRoute(
+    /\.(?:js|css)$/,
+    workbox.strategies.staleWhileRevalidate(),
+  );
+
+  workbox.routing.registerRoute(
+    /\.(?:png|gif|jpg|jpeg|svg)$/,
+    workbox.strategies.cacheFirst({
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    }),
+  );
+  ```
+
+5. Run build again `npm run build`
+
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-webpack-plugin/injectManifest/my-project
 
 ------------------------------------------------------------
 
@@ -66,6 +132,24 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 ------------------------------------------------------------
 
+## Manual Install Service Worker in Vue.js
+
+Add this below script in your `./src/main.js`
+
+  ```js
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(reg => {
+        console.log('Service Worker has been registered');
+      })
+      .catch(e =>
+        console.error('Error during service worker registration:', e)
+      );
+  } else {
+    console.warn('Service Worker is not supported');
+  }
+  ```
 ## See Others Codes
 
 
