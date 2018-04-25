@@ -118,7 +118,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
     // workbox generateSW
-    new GenerateSW()
+    new GenerateSW({
+      swDest: path.join(config.build.assetsRoot, '/sw.js'),
+      precacheManifestFilename: path.join(config.build.assetsSubDirectory, '/precache.[manifestHash].js')
+    })
   ]
 })
 
