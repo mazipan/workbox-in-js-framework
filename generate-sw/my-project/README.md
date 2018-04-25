@@ -91,3 +91,30 @@ We decide using `generateSW` when we want simple setup for our service worker an
 5. Automate with adding script in your build process in `package.json`
 
 6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+
+
+## Manual Install Service Worker in Angular
+
+Add this below script in `src/main.ts` file:
+
+```js
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then(() => registerServiceWorker())
+  .catch(err => console.log(err));
+
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(reg => {
+        console.log('Service Worker has been registered');
+      })
+      .catch(e =>
+        console.error('Error during service worker registration:', e)
+      );
+  } else {
+    console.warn('Service Worker is not supported');
+  }
+}
+```

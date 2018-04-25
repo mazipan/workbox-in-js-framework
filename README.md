@@ -176,6 +176,31 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
 
+## Manual Install Service Worker in Angular
+
+Add this below script in `src/main.ts` file:
+
+```js
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then(() => registerServiceWorker())
+  .catch(err => console.log(err));
+
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(reg => {
+        console.log('Service Worker has been registered');
+      })
+      .catch(e =>
+        console.error('Error during service worker registration:', e)
+      );
+  } else {
+    console.warn('Service Worker is not supported');
+  }
+}
+```
 
 ## See Others Codes
 

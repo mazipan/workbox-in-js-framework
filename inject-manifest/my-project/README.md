@@ -126,3 +126,30 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
 
+
+## Manual Install Service Worker in Angular
+
+Add this below script in `src/main.ts` file:
+
+```js
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then(() => registerServiceWorker())
+  .catch(err => console.log(err));
+
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(reg => {
+        console.log('Service Worker has been registered');
+      })
+      .catch(e =>
+        console.error('Error during service worker registration:', e)
+      );
+  } else {
+    console.warn('Service Worker is not supported');
+  }
+}
+```
+
