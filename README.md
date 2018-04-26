@@ -54,7 +54,7 @@ We decide using `generateSW` when we want simple setup for our service worker an
   }
   ```
 
-6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/generate-sw/my-project
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-build/generate-sw/my-project
 
 
 ### 🐍 Workbox Build with injectManifest
@@ -120,7 +120,7 @@ We using `injectManifest` because we will create more advance script in our serv
   }
   ```
 
-8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/inject-manifest/my-project
+8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-build/inject-manifest/my-project
 
 
 ## 👉 Using Workbox CLI
@@ -131,42 +131,81 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 ### 🦄 Workbox CLI with generateSW
 
-1. Create config file, `workbox-config.js` in root folder
+1. Create config file, `workbox-config.js` in `./src` folder
 
 2. Add this script in this file:
 
   ```js
   module.exports =  {
-    swDest: 'dist/sw.js',
-    globDirectory: 'dist'
+    swDest: 'build/sw.js',
+    globDirectory: 'build'
   }
   ```
 
-3. Run script with command: `workbox generateSW ./workbox-config.js`
+3. Run script with command: `workbox generateSW ./src/workbox-config.js`
 
-4. Automate with adding script in your build process in `package.json`
+4. Automate in build process. Just modify `build` script in `package.json`
 
-5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+  ```js
+  "scripts": {
+    "build": "react-scripts build && workbox generateSW ./src/workbox-config.js"
+  }
+  ```
+
+5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-cli/generate-sw/my-project
 
 ### 🐍 Workbox CLI with injectManifest
 
-1. Create config file, `workbox-config.js` in root folder
+1. Create config file, `workbox-config.js` in `./src` folder
 
 2. Add this script in this file:
 
   ```js
-  module.exports =  {
-    swSrc: './sw-template.js',
-    swDest: 'dist/sw.js',
-    globDirectory: 'dist'
+  module.exports = {
+    swSrc: './src/sw-template.js',
+    swDest: 'build/sw.js',
+    globDirectory: 'build'
   }
   ```
 
-3. Run script with command: `workbox injectManifest ./workbox-config.js`
+3. We need to create template for our `sw.js`, let's create new file called `sw-template.js` in `./src` folder.
 
-4. Automate with adding script in your build process in `package.json`
+4. Add this script as in `sw-template.js` file:
 
-5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+  ```js
+  // This is required line
+  workbox.precaching.precacheAndRoute([]);
+
+  workbox.routing.registerRoute(
+    new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+    workbox.strategies.cacheFirst(),
+  );
+
+  workbox.routing.registerRoute(
+    /\.(?:png|gif|jpg|jpeg|svg|js|css|html)$/,
+    workbox.strategies.cacheFirst({
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    }),
+  );
+  ```
+
+5. Run script with command: `workbox injectManifest ./workbox-config.js`
+
+6. Automate in build process. Just modify `build` script in `package.json`
+
+  ```js
+  "scripts": {
+    "build": "react-scripts build && workbox injectManifest ./src/workbox-config.js"
+  }
+  ```
+
+7. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-cli/inject-manifest/my-project
 
 ## Manual Install Service Worker in React
 
