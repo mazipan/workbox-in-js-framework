@@ -5,12 +5,12 @@
 
 1. [Workbox In React.js](#workbox-in-reactjs)
 1. [Create React Project](#create-react-project)
-1. [👉 Using Workbox Build](#-using-workbox-build
-  1. [🦄 Workbox Build with generateSW](#-workbox-build-with-generatesw)
-  1. [🐍 Workbox Build with injectManifest](#-workbox-build-with-injectmanifest)
+1. [👉 Using Workbox Build](#-using-workbox-build)
+    1. [🦄 Workbox Build with generateSW](#-workbox-build-with-generatesw)
+    1. [🐍 Workbox Build with injectManifest](#-workbox-build-with-injectmanifest)
 1. [👉 Using Workbox CLI](#-using-workbox-cli)
-  1. [🦄 Workbox CLI with generateSW](#-workbox-cli-with-generatesw)
-  1. [🐍 Workbox CLI with injectManifest](#-workbox-cli-with-injectmanifest)
+    1. [🦄 Workbox CLI with generateSW](#-workbox-cli-with-generatesw)
+    1. [🐍 Workbox CLI with injectManifest](#-workbox-cli-with-injectmanifest)
 1. [Install Service Worker in React.js](#install-service-worker-in-reactjs)
 1. [See Others Codes](#see-others-codes)
 
