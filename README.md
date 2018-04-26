@@ -1,9 +1,24 @@
 # workbox-in-js-framework
 🍳 Code sample for using Workbox in various JS framework
 
+## Outline
+
+1. [Workbox In React.js](#workbox-in-reactjs)
+1. [Create React Project](#create-react-project)
+1. [👉 Using Workbox Build](#-using-workbox-build
+  1. [🦄 Workbox Build with generateSW](#-workbox-build-with-generatesw)
+  1. [🐍 Workbox Build with injectManifest](#-workbox-build-with-injectmanifest)
+1. [👉 Using Workbox CLI](#-using-workbox-cli)
+  1. [🦄 Workbox CLI with generateSW](#-workbox-cli-with-generatesw)
+  1. [🐍 Workbox CLI with injectManifest](#-workbox-cli-with-injectmanifest)
+1. [Install Service Worker in React.js](#install-service-worker-in-reactjs)
+1. [See Others Codes](#see-others-codes)
+
 ## Workbox In React.js
 
 By default, `create-react-app` has been support PWA and generate service-worker file. But in this section we will show you how we using Workbox as our service-worker generate tools instead using the default one and we will doing this without any `eject` workaround.
+
+[🔼 back to top](#outline)
 
 ## Create React Project
 
@@ -12,6 +27,8 @@ By default, `create-react-app` has been support PWA and generate service-worker 
 2. Try running build for first time with command: `yarn build`
   It will create new folder `./build` as our output result.
 
+[🔼 back to top](#outline)
+
 ## 👉 Using Workbox Build
 
 This part we will use `workbox-build` modules. Here step by step:
@@ -19,6 +36,8 @@ This part we will use `workbox-build` modules. Here step by step:
 1. Add dependency `workbox-build` with command:
    npm: `npm i --save-dev workbox-build`
    yarn: `yarn add workbox-build -D`
+
+[🔼 back to top](#outline)
 
 ### 🦄 Workbox Build with generateSW
 
@@ -56,6 +75,7 @@ We decide using `generateSW` when we want simple setup for our service worker an
 
 6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-build/generate-sw/my-project
 
+[🔼 back to top](#outline)
 
 ### 🐍 Workbox Build with injectManifest
 
@@ -122,6 +142,7 @@ We using `injectManifest` because we will create more advance script in our serv
 
 8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-build/inject-manifest/my-project
 
+[🔼 back to top](#outline)
 
 ## 👉 Using Workbox CLI
 
@@ -153,6 +174,8 @@ This part we will use `Workbox CLI` modules. Here step by step:
   ```
 
 5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-cli/generate-sw/my-project
+
+[🔼 back to top](#outline)
 
 ### 🐍 Workbox CLI with injectManifest
 
@@ -207,7 +230,9 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 7. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/using-workbox-cli/inject-manifest/my-project
 
-## Manual Install Service Worker in React
+[🔼 back to top](#outline)
+
+## Install Service Worker in React.js
 
 `create-react-app` by default has been support service-worker registration.
 So, just need change file service-worker in `src/registerServiceWorker.js` like:
@@ -220,11 +245,16 @@ const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 const swUrl = `${process.env.PUBLIC_URL}/sw.js`;
 ```
 
+[🔼 back to top](#outline)
+
 ## See Others Codes
 
 1. [Workbox Introduction](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-intro)
 1. [Workbox in Vue.js](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs)
 1. [Workbox in Angular](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular)
 1. [Workbox in React](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react)
+
+[🔼 back to top](#outline)
+
 
 Copyright © 2018 by Irfan Maulana
