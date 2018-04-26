@@ -1,6 +1,10 @@
 # workbox-in-js-framework
 🍳 Code sample for using Workbox in various JS framework
 
+## Workbox In React.js
+
+By default, `create-react-app` has been support PWA and generate service-worker file. But in this section we will show you how we using Workbox as our service-worker generate tools instead using the default one and we will doing this without any `eject` workaround.
+
 ## Create React Project
 
 1. First we can create new React Project with `create-react-app` with command: `npx create-react-app my-project`
@@ -20,44 +24,44 @@ This part we will use `workbox-build` modules. Here step by step:
 
 We decide using `generateSW` when we want simple setup for our service worker and not using any other API for PWA, here the steps:
 
-1. Create new file for generating our service worker, let's name it `sw-build.js`, we put in root folder.
+1. Create new file for generating our service worker, let's name it `sw-build.js`, we put in `./src` folder.
 
 2. Add simple setup in file `sw-build.js` with script like this:
 
   ```js
   const { generateSW } = require('workbox-build');
 
-  const swDest = 'dist/sw.js';
+  const swDest = 'build/sw.js';
   generateSW({
     swDest,
-    globDirectory: 'dist'
+    globDirectory: 'build'
   }).then(({count, size}) => {
     console.log(`Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`);
   });
   ```
 
-3. Try running build for first time with command: `npm run build`
-  It will create new folder `./dist` as our output result.
+3. Try running build for first time with command: `yarn build`
+  It will create new folder `./build` as our output result.
 
 4. Try running `workbox-build` script with `node ./sw-build.js`.
-  It should create file `sw.js` in `./dist` folder.
+  It should create file `sw.js` in `./build` folder.
 
 5. Automate in build process. Just modify `build` script in `package.json`
 
   ```js
   "scripts": {
-    "build": "ng build --prod && node ./sw-build.js"
+    "build": "react-scripts build && node ./src/sw-build.js"
   }
   ```
 
-6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/generate-sw/my-project
 
 
 ### 🐍 Workbox Build with injectManifest
 
 We using `injectManifest` because we will create more advance script in our service-worker. The steps is almost same, but we need to prepare our service worker first that will used by workbox as template to inject precache files later. Here the step by step :
 
-1. We need to create template for our `sw.js`, let's create new file called `sw-template.js` in our root folder.
+1. We need to create template for our `sw.js`, let's create new file called `sw-template.js` in `./src` folder.
 
 2. Add this script as in `sw-template.js` file:
 
@@ -84,39 +88,39 @@ We using `injectManifest` because we will create more advance script in our serv
   );
   ```
 
-3. Create new file for generating our service worker, let's name it `sw-build.js`, we put in root folder.
+3. Create new file for generating our service worker, let's name it `sw-build.js`, we put in `src` folder.
 
 4. Add simple setup in file `sw-build.js` with script like this:
 
   ```js
   const { injectManifest } = require('workbox-build');
 
-  const swSrc = './sw-template.js';
-  const swDest = 'dist/sw.js';
+  const swSrc = './src/sw-template.js';
+  const swDest = 'build/sw.js';
   injectManifest({
     swSrc,
     swDest,
-    globDirectory: 'dist'
+    globDirectory: 'build'
   }).then(({count, size}) => {
     console.log(`Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`);
   });
   ```
 
-5. Try running build for first time with command: `npm run build`
-  It will create new folder `./dist` as our output result.
+5. Try running build for first time with command: `yarn build`
+  It will create new folder `./build` as our output result.
 
-6. Try running `workbox-build` script with `node ./sw-build.js`.
-  It should create file `sw.js` in `./dist` folder.
+6. Try running `workbox-build` script with `node ./src/sw-build.js`.
+  It should create file `sw.js` in `./build` folder.
 
 7. Automate in build process. Just modify `build` script in `package.json`
 
   ```js
   "scripts": {
-    "build": "ng build --prod && node ./sw-build.js"
+    "build": "react-scripts build && node ./src/sw-build.js"
   }
   ```
 
-8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react/inject-manifest/my-project
 
 
 ## 👉 Using Workbox CLI
@@ -166,21 +170,15 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 ## Manual Install Service Worker in React
 
-Add this below script in `src/main.ts` file:
+`create-react-app` by default has been support service-worker registration.
+So, just need change file service-worker in `src/registerServiceWorker.js` like:
 
 ```js
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/sw.js')
-    .then(reg => {
-      console.log('Service Worker has been registered');
-    })
-    .catch(e =>
-      console.error('Error during service worker registration:', e)
-    );
-} else {
-  console.warn('Service Worker is not supported');
-}
+// change this line
+const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+
+// into this script
+const swUrl = `${process.env.PUBLIC_URL}/sw.js`;
 ```
 
 ## See Others Codes
