@@ -229,10 +229,10 @@ function registerServiceWorker() {
 
 ## See Others Codes
 
-1. [Workbox Introduction](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-intro)
-1. [Workbox in Vue.js](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs)
-1. [Workbox in Angular](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular)
-1. [Workbox in React](https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-react)
+1. [Workbox Introduction](https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-intro)
+1. [Workbox in Vue.js](https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs)
+1. [Workbox in Angular](https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular)
+1. [Workbox in React](https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-react)
 
 [🔼 back to top](#outline)
 
