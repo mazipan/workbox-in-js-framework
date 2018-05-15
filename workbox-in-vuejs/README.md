@@ -66,7 +66,7 @@ This part we will use `workbox-webpack-plugin` modules. Here step by step:
 
 5. Run build again `npm run build`
 
-6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-webpack-plugin/generateSW/my-project
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs/using-workbox-webpack-plugin/generateSW/my-project
 
 [🔼 back to top](#outline)
 
@@ -120,7 +120,7 @@ This part we will use `workbox-webpack-plugin` modules. Here step by step:
 
 5. Run build again `npm run build`
 
-6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-webpack-plugin/injectManifest/my-project
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs/using-workbox-webpack-plugin/injectManifest/my-project
 
 [🔼 back to top](#outline)
 
@@ -160,7 +160,7 @@ This part we will use `workbox-build` modules. Here step by step:
   }
   ```
 
-5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-build/generateSW/my-project
+5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs/using-workbox-build/generateSW/my-project
 
 [🔼 back to top](#outline)
 
@@ -219,7 +219,7 @@ This part we will use `workbox-build` modules. Here step by step:
   }
   ```
 
-6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-build/injectManifest/my-project
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs/using-workbox-build/injectManifest/my-project
 
 [🔼 back to top](#outline)
 
@@ -252,7 +252,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
   }
   ```
 
-5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-cli/generateSW/my-project
+5. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs/using-workbox-cli/generateSW/my-project
 
 [🔼 back to top](#outline)
 
@@ -305,7 +305,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
   }
   ```
 
-6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-vuejs/using-workbox-cli/injectManifest/my-project
+6. See sample code: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-vuejs/using-workbox-cli/injectManifest/my-project
 
 [🔼 back to top](#outline)
 

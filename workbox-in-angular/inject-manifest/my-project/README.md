@@ -101,7 +101,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   }
   ```
 
-11. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+11. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/inject-manifest/my-project
 
 
 ## Using Workbox-CLI
@@ -124,7 +124,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 5. Automate with adding script in your build process in `package.json`
 
-6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/inject-manifest/my-project
 
 
 ## Manual Install Service Worker in Angular

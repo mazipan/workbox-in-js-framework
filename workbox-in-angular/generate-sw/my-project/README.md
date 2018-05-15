@@ -68,7 +68,7 @@ We decide using `generateSW` when we want simple setup for our service worker an
   }
   ```
 
-9. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+9. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/generate-sw/my-project
 
 
 ## Using Workbox-CLI
@@ -90,7 +90,7 @@ We decide using `generateSW` when we want simple setup for our service worker an
 
 5. Automate with adding script in your build process in `package.json`
 
-6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/generate-sw/my-project
 
 
 ## Manual Install Service Worker in Angular

@@ -77,7 +77,7 @@ We decide using `generateSW` when we want simple setup for our service worker an
   }
   ```
 
-6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+6. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/generate-sw/my-project
 
 [🔼 back to top](#outline)
 
@@ -144,7 +144,7 @@ We using `injectManifest` because we will create more advance script in our serv
   }
   ```
 
-8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+8. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/inject-manifest/my-project
 
 [🔼 back to top](#outline)
 
@@ -173,7 +173,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 4. Automate with adding script in your build process in `package.json`
 
-5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/generate-sw/my-project
+5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/generate-sw/my-project
 
 [🔼 back to top](#outline)
 
@@ -195,7 +195,7 @@ This part we will use `Workbox CLI` modules. Here step by step:
 
 4. Automate with adding script in your build process in `package.json`
 
-5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/workbox-in-angular/inject-manifest/my-project
+5. Check code sample here: https://github.com/mazipan/workbox-in-js-framework/tree/master/workbox-in-angular/inject-manifest/my-project
 
 [🔼 back to top](#outline)
 
